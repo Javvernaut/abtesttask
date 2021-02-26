@@ -1,0 +1,20 @@
+openexchangerates:
+  app_id: 10
+  currency_to: USD
+  current_url: "http://localhost:8888/api/latest.json?app_id=${openexchangerates.app_id}\
+               &base=${openexchangerates.currency_to}"
+  previous_url: "http://localhost:8888/api/historical/{}.json?app_id=${openexchangerates.app_id}\
+                &base=${openexchangerates.currency_to}"
+
+  schedule: 0 0 */1 * * *
+
+
+giphy:
+  api_key: 10
+  growth: rich
+  fall: broke
+  url: http://localhost:8888/v1/gifs/random?api_key=${giphy.api_key}&tag={}
+
+  image_cache_size: 1
+
+async.enabled: false

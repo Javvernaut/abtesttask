@@ -1,0 +1,33 @@
+openexchangerates:
+  # Application id
+  app_id: 000
+
+  # Base currency
+  currency_to: RUB
+
+  # Latest rates url
+  current_url: "https://openexchangerates.org/api/latest.json?app_id=${openexchangerates.app_id}\
+                               &base=${openexchangerates.currency_to}"
+  # Last day rates url
+  previous_url: "https://openexchangerates.org/api/historical/{}.json?app_id=${openexchangerates.app_id}\
+                  &base=${openexchangerates.currency_to}"
+
+  # Time to update rates
+  schedule: 0 0 */1 * * *
+
+giphy:
+  # Application id
+  api_key: 000
+
+  # Growth param
+  growth: rich
+
+  # Fall param
+  fall: broke
+
+  # Random gif url
+  url: https://api.giphy.com/v1/gifs/random?api_key=${giphy.api_key}&tag={}
+
+  image_cache_size: 15
+
+async.enabled: true
